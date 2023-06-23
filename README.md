@@ -62,6 +62,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
+# Output (website responsive)
+# sign in page
+![Screenshot (142)](https://github.com/Divya56789/internshiptask/assets/100693473/1b51bc68-aab4-4078-b2c7-4558d251d35c)
+# dashboard page
+![Screenshot (143)](https://github.com/Divya56789/internshiptask/assets/100693473/0ceee965-aa42-4c1f-8ac9-d4cf9b534dbd)
+
+# mobile responsive
+![dashboard__mobile__responsive__img](https://github.com/Divya56789/internshiptask/assets/100693473/07bc9034-854a-4ccb-b5d1-9ead793f300f)
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
