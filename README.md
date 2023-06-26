@@ -66,8 +66,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 # sign in page
 ![Screenshot (142)](https://github.com/Divya56789/internshiptask/assets/100693473/1b51bc68-aab4-4078-b2c7-4558d251d35c)
 # dashboard page
-![Screenshot (143)](https://github.com/Divya56789/internshiptask/assets/100693473/0ceee965-aa42-4c1f-8ac9-d4cf9b534dbd)
-
+![Screenshot (144)](https://github.com/Divya56789/internshiptask/assets/100693473/b7cb6142-264d-41fb-832d-a3ccded61568)
 # mobile responsive
 ![dashboard__mobile__responsive__img](https://github.com/Divya56789/internshiptask/assets/100693473/07bc9034-854a-4ccb-b5d1-9ead793f300f)
 
