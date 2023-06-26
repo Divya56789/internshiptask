@@ -32,17 +32,17 @@ function Dashboard() {
               dataLabels:{
                 enabled : false
               },
-              responsive: [{
-                breakpoint: 480,
-                options: {
-                  chart: {
-                    width: 100
-                  },
-                  legend: {
-                    position: 'bottom'
-                  }
-                }
-              }]
+              // responsive: [{
+              //   breakpoint: 480,
+              //   options: {
+              //     chart: {
+              //       width: 100
+              //     },
+              //     legend: {
+              //       position: 'bottom'
+              //     }
+              //   }
+              // }]
             },
           
           
@@ -197,8 +197,7 @@ function Dashboard() {
               options={data01.options}
               series={data01.series}
               type="pie"
-              width="350"
-              height="180"
+              width="330"
             />
             </div>
             
