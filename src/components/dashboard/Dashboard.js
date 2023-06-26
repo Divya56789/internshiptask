@@ -14,14 +14,41 @@ import likes from '../../assets/like.svg';
 import total_users from '../../assets/two_user.svg';
 import down from '../../assets/chevron_down.svg';
 import right from '../../assets/chevron_right.svg';
-import pink_dot from '../../assets/pink_dot.svg';
-import green_dot from '../../assets/green_dot.svg';
-import yellow_dot from '../../assets/yellow_dot.svg';
-import { CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import { useSelector } from 'react-redux';
+import Chart from "react-apexcharts";
+
 
 function Dashboard() {
   const userInfo = useSelector((state) => state.user.userInfo);
+  const data01 = {
+    series: [550, 310, 140],
+            options: {
+              chart: {
+                width: 190,
+                type: 'pie',
+              },
+              labels: ['Basic Tees', 'Custom Short Pants', 'Super Hoodies'],
+              dataLabels:{
+                enabled : false
+              },
+              responsive: [{
+                breakpoint: 480,
+                options: {
+                  chart: {
+                    width: 100
+                  },
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }]
+            },
+          
+          
+          
+  
+  }
   const data = [
     {
       "name": "week 1",
@@ -45,23 +72,7 @@ function Dashboard() {
     },
     
   ]
-  const data01 = [
-    {
-      name: "Basic Tees",
-      value: 550
-    },
-    {
-      name: "Custom Short Pants",
-      value: 310
-    },
-    {
-      name: "Super Hoodies",
-      value: 140
-    },
-
-
-  ];
-  const colors = ['#98D89E', '#F6DC7D', '#EE8484'];
+  
   return (
     <div className='dashboard'>
       <nav>
@@ -182,38 +193,15 @@ function Dashboard() {
 
           <div className="graph__container">
             <div className="top__products__graph">
-              <PieChart width={130} height={100}>
-                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} />
-                {data01.map((entry, index) => {
-                  return <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                })}
-              </PieChart>
+            <Chart
+              options={data01.options}
+              series={data01.series}
+              type="pie"
+              width="350"
+              height="180"
+            />
             </div>
-            <div className="graph__description">
-              <div className="basic__tees">
-                <img src={green_dot} alt="green" />
-                <div className="basic__tees__text">
-                  <h5>Basic Tees</h5>
-                  <p>55%</p>
-                </div>
-              </div>
-
-              <div className="custom__short__pants">
-                <img src={yellow_dot} alt="yellow" />
-                <div className="custom__short__pants__text">
-                  <h5>Custom Short Pants</h5>
-                  <p>31%</p>
-                </div>
-              </div>
-
-              <div className="super__hoodies">
-                <img src={pink_dot} alt="pink" />
-                <div className="super__hoodies__text">
-                  <h5>Super Hoodies</h5>
-                  <p>14%</p>
-                </div>
-              </div>
-            </div>
+            
 
           </div>
         </div>
@@ -249,4 +237,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default Dashboard;

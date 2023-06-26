@@ -1,5 +1,5 @@
 import React from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, OAuthProvider } from "firebase/auth";
 import "./signIn.css";
 import apple from "../../assets/Apple Logo.svg";
 import goggle from "../../assets/google.svg";
@@ -12,11 +12,34 @@ function SignIn() {
   const navigate = useNavigate();
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
+  const appleProvider = new OAuthProvider('apple.com');
 
 
   const handleGoggleLogin = (e) => {
     e.preventDefault();
     signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const user = result.user;
+        dispatch(
+          addUser({
+            id: user.uid,
+            name: user.displayName,
+            email: user.email,
+            image: user.photoURL,
+          })
+        );
+        setTimeout(() => {
+          navigate("/dashboard");
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleAppleLogin = (e) => {
+    e.preventDefault();
+    signInWithPopup(auth, appleProvider)
       .then((result) => {
         const user = result.user;
         dispatch(
@@ -52,7 +75,7 @@ function SignIn() {
               <img src={goggle} alt="goggle" />
               <span>Sign in with Google</span>
             </div>
-            <div className="signinWithApple">
+            <div className="signinWithApple" role="button" onClick={handleAppleLogin}>
               <img src={apple} alt="apple" />
               <span>Sign in with Apple</span>
             </div>

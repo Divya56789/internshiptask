@@ -52,7 +52,7 @@
 }
 form{
     background-color: white;
-    padding:1rem;
+    padding:1rem 1.6rem;
     border-radius: 0.6rem;
     display: flex;
     flex-direction: column;
